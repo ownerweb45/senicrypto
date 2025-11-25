@@ -28,7 +28,7 @@
     /* Header */
     .site-header{
       position:sticky;top:0;
-      background:rgba(0,0,0,0.8);
+      background:rgba(0,0,0,0.85);
       backdrop-filter:blur(8px);
       border-bottom:1px solid rgba(212,175,55,0.15);
       z-index:50;
@@ -52,24 +52,30 @@
     /* Hero */
     .hero{padding:70px 0;background:linear-gradient(180deg, #000000, #0E0E0E)}
     .hero-grid{display:grid;grid-template-columns:1fr 350px;gap:32px}
-    .hero-left h1{font-size:38px;margin:0;color:var(--gold-light)}
     .lead{color:var(--gold-muted);margin-top:10px;margin-bottom:20px}
-    .cta-row{display:flex;gap:12px;margin-top:20px}
+
+    .cta-row{display:flex;flex-direction:column;gap:15px;margin-top:25px}
+
     .btn-primary{
       background:var(--gold);
       color:#000;
       font-weight:700;
-      padding:12px 20px;
-      border-radius:10px;
+      padding:16px 24px;
+      border-radius:12px;
       text-decoration:none;
+      font-size:18px;
+      width: fit-content;
     }
     .btn-ghost{
       border:1px solid var(--gold);
-      padding:12px 20px;
-      border-radius:10px;
+      padding:14px 22px;
+      border-radius:12px;
       color:var(--gold);
       text-decoration:none;
+      font-size:16px;
+      width: fit-content;
     }
+
     .hero-stats{display:flex;gap:20px;list-style:none;padding:0;margin-top:22px}
     .hero-stats strong{color:var(--gold-light);display:block}
 
@@ -180,62 +186,46 @@
   </header>
 
   <main>
-    <!-- HERO -->
+
+    <!-- HERO (REVISI LENGKAP) -->
     <section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-left">
+      <div class="container hero-grid">
 
-      <!-- HEADLINE BARU -->
-      <h1 style="font-size:38px; margin:0;">
-        <span style="color:white;">Strategi Cerdas dan Terukur</span><br>
-        <span style="color:#D4AF37; font-weight:800;">Gandain Uang Kamu</span>
-      </h1>
+        <div class="hero-left">
 
-      <p class="lead">Belajar trading premium dengan pendekatan kreatif dan profesional.</p>
+          <h1 style="font-size:38px; margin:0;">
+            <span style="color:white;">Strategi Cerdas dan Terukur</span><br>
+            <span style="color:#D4AF37; font-weight:800;">Gandain Uang Kamu</span>
+          </h1>
 
-      <!-- CTA BUTTON BARU -->
-      <div class="cta-row" style="flex-direction:column; align-items:flex-start; gap:15px; margin-top:25px;">
+          <p class="lead">Belajar trading premium dengan pendekatan kreatif dan profesional.</p>
 
-        <!-- GABUNG SEKARANG (lebih besar) -->
-        <a href="#kursus" 
-           class="btn-primary" 
-           style="font-size:18px; padding:16px 24px; border-radius:12px; width: fit-content;">
-          Gabung Sekarang
-        </a>
+          <div class="cta-row">
+            <a href="#kursus" class="btn-primary">Gabung Sekarang</a>
 
-        <!-- YANG AKAN KAMU DAPATKAN (pindah ke bawah) -->
-        <a href="#about" 
-           class="btn-ghost" 
-           style="font-size:16px; padding:14px 22px; border-radius:12px; width: fit-content;">
-          Yang Akan Kamu Dapatkan
-        </a>
+            <a href="#about" class="btn-ghost">
+              Yang Akan Kamu Dapatkan
+            </a>
+          </div>
 
-      </div>
-
-      <ul class="hero-stats">
-        <li><strong>1.200+</strong>Siswa</li>
-        <li><strong>95%</strong>Puas</li>
-        <li><strong>30+</strong>Modul</li>
-      </ul>
-    </div>
-
-    <div>
-      <div class="card-sim">
-        <h4>Akun Demo Seni Crypto</h4>
-        <div class="sim-line"><span>Bitcoin</span><span>+3.8%</span></div>
-        <div class="sim-line"><span>Ethereum</span><span>-1.2%</span></div>
-        <a href="#kontak" class="btn-outline" style="margin-top:12px;display:inline-block">Dapatkan Akses</a>
-      </div>
-    </div>
-  </div>
-    </section>
+          <ul class="hero-stats">
+            <li><strong>1.200+</strong>Siswa</li>
+            <li><strong>95%</strong>Puas</li>
+            <li><strong>30+</strong>Modul</li>
+          </ul>
+        </div>
 
         <div>
           <div class="card-sim">
             <h4>Akun Demo Seni Crypto</h4>
             <div class="sim-line"><span>Bitcoin</span><span>+3.8%</span></div>
             <div class="sim-line"><span>Ethereum</span><span>-1.2%</span></div>
-            <a href="#kontak" c
+            <a href="#kontak" class="btn-outline" style="margin-top:12px;display:inline-block">Dapatkan Akses</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- ABOUT -->
     <section id="about" class="section container">
