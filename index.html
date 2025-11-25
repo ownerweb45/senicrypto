@@ -4,293 +4,198 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seni Crypto</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    /* CSS untuk mengatur font dan layout umum */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a1a1a;
       color: white;
+      overflow-x: hidden;
     }
 
-    /* NAVBAR */
-    header {
-      width: 100%;
-      padding: 18px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #000;
-      border-bottom: 1px solid #D4AF37;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      color: #D4AF37;
+    h1, h2, p {
       margin: 0;
-      font-size: 24px;
-      font-weight: 700;
     }
 
-    .menu-icon {
-      font-size: 26px;
-      color: #D4AF37;
-      cursor: pointer;
+    .container {
+      width: 100%;
+      padding: 5% 10%;
+      text-align: center;
     }
 
-    /* HERO SECTION */
+    /* Warna emas dan efek */
+    .highlight {
+      color: #FFD700;
+      font-weight: bold;
+    }
+
+    .silver { color: silver; }
+    .yellow-ombre { color: #FFA500; }
+    .golden { color: #FFD700; }
+
+    /* Hero Section */
     .hero {
-      padding: 50px 25px;
+      padding: 80px 0;
+      background: linear-gradient(45deg, #ffd700, #ffcc00);
+      border-bottom: 2px solid #fff;
+      color: white;
     }
 
     .hero h1 {
-      font-size: 34px;
-      line-height: 1.3;
+      font-size: 36px;
+      margin-bottom: 20px;
     }
 
-    .lead {
-      font-size: 15px;
-      color: #d6d6d6;
-      margin-top: 10px;
+    .hero p {
+      font-size: 18px;
+      color: #d3d3d3;
     }
 
-    .cta-row {
-      margin-top: 25px;
+    .btn-vertical {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 15px;
+      margin-top: 20px;
+      align-items: center;
     }
 
-    .btn-primary {
-      background: #D4AF37;
-      padding: 16px 25px;
-      border-radius: 12px;
-      font-size: 18px;
-      font-weight: 700;
-      color: black;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-ghost {
-      padding: 14px 22px;
-      border-radius: 12px;
-      border: 1px solid #D4AF37;
-      color: #D4AF37;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .hero-stats {
-      margin-top: 30px;
-      padding: 0;
-      list-style: none;
-      display: flex;
-      gap: 25px;
-      font-size: 15px;
-    }
-
-    .hero-stats strong {
-      display: block;
-      font-size: 20px;
-      color: #FFD700;
-    }
-
-    /* SIMULASI CARD */
-    .card-sim {
-      margin-top: 40px;
-      padding: 20px;
-      border-radius: 14px;
-      border: 1px solid #D4AF37;
-      background: #0f0f0f;
-      width: 100%;
-    }
-
-    .card-sim h4 {
-      margin: 0 0 15px 0;
-      color: #D4AF37;
-      font-size: 18px;
-    }
-
-    .sim-line {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px solid #333;
+    .btn {
+      background-color: #FFD700;
+      padding: 15px 30px;
+      font-size: 16px;
       color: white;
-    }
-
-    .btn-outline {
-      margin-top: 12px;
-      padding: 12px;
-      border: 1px solid #D4AF37;
-      display: inline-block;
-      color: #D4AF37;
-      border-radius: 10px;
-      text-decoration: none;
-    }
-
-    /* PAKET PREMIUM */
-    .pricing-section {
-      padding: 50px 25px;
-      margin-top: 40px;
-    }
-
-    .section-title {
-      font-size: 30px;
-      color: #D4AF37;
-      font-weight: 700;
-      margin-bottom: 25px;
-    }
-
-    .pricing-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-
-    .price-card {
-      background: #0d0d0d;
-      border: 1px solid #D4AF37;
-      border-radius: 14px;
-      padding: 25px;
-      box-shadow: 0 0 18px rgba(212, 175, 55, 0.25);
+      text-transform: uppercase;
+      border: none;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
-    .price-card h3 {
-      text-align: center;
-      font-size: 26px;
-      font-weight: 700;
-      margin: 0;
+    .btn:hover {
+      background-color: #ffcc00;
     }
 
-    .title-exclusive {
-      color: silver;
-    }
-
-    .title-exclusive-plus {
-      color: #ffb84d;
-    }
-
-    .title-super-exclusive {
-      color: #ffd700;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #e9e9e9;
-      margin-top: 8px;
-      margin-bottom: 12px;
-    }
-
-    .old-price {
-      text-align: center;
-      color: #bbbbbb;
-      text-decoration: line-through;
-      font-size: 18px;
-    }
-
-    .new-price {
-      text-align: center;
-      color: #FFD700;
-      font-size: 28px;
-      font-weight: 700;
-      margin-top: -2px;
-    }
-
-    .price-btn {
+    .btn-vertical a {
       display: block;
-      width: 100%;
-      margin-top: 15px;
-      padding: 12px;
-      background: #D4AF37;
-      color: black;
-      text-align: center;
-      border-radius: 10px;
-      font-weight: 700;
+      margin: 5px;
+      background-color: #FFD700;
+      padding: 15px;
+      color: white;
       text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-vertical a:hover {
+      background-color: #ffcc00;
+    }
+
+    .stats {
+      margin-top: 50px;
+    }
+
+    .pricing {
+      margin-top: 50px;
+      padding: 50px 0;
+      background-color: #333;
+    }
+
+    .pricing h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .price-option {
+      margin: 20px 0;
+    }
+
+    .price-option span {
+      text-decoration: line-through;
+      color: #d3d3d3;
+    }
+
+    .price-option .new-price {
+      color: #FFD700;
+      font-size: 24px;
+    }
+
+    /* Footer section */
+    footer {
+      background-color: #222;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Seni Crypto</h1>
-  <div class="menu-icon">☰</div>
-</header>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="container">
+      <h1>Strategi Cerdas dan Terukur untuk Gandain Uang Kamu</h1>
+      <p>Gabung ke Komunitas dan Platform Belajar Crypto Sekarang</p>
 
-<section class="hero">
+      <div class="btn-vertical">
+        <a href="#join-now" class="btn">GABUNG SEKARANG</a>
+        <a href="#what-you-get" class="btn">APA YANG KAMU DAPATKAN</a>
+      </div>
 
-  <h1>
-    <span style="color:white;">Strategi Cerdas dan Terukur</span><br>
-    <span style="color:#D4AF37; font-weight:900;">Gandain Uang Kamu</span>
-  </h1>
-
-  <p class="lead">Belajar trading premium dengan pendekatan kreatif dan profesional.</p>
-
-  <div class="cta-row">
-    <a href="#paket" class="btn-primary">Gabung Sekarang</a>
-    <a href="#paket" class="btn-ghost">Yang Akan Kamu Dapatkan</a>
+      <a href="https://discord.gg/uZxwH6k6x" target="_blank" class="btn" style="margin-top: 30px;">GABUNG KOMUNITAS DISCORD SEKARANG</a>
+    </div>
   </div>
 
-  <ul class="hero-stats">
-    <li><strong>1.200+</strong>Siswa</li>
-    <li><strong>95%</strong>Puas</li>
-    <li><strong>30+</strong>Modul</li>
-  </ul>
-
-  <div class="card-sim">
-    <h4>Akun Demo Seni Crypto</h4>
-    <div class="sim-line"><span>Bitcoin</span><span>+3.8%</span></div>
-    <div class="sim-line"><span>Ethereum</span><span>-1.2%</span></div>
-    <a href="#" class="btn-outline">Dapatkan Akses</a>
+  <!-- Stats Section -->
+  <div class="stats container">
+    <h2>150+ <span class="highlight">Member</span>  85% <span class="highlight">Puas</span></h2>
+    <h3>Portofolio <span class="highlight">+57%</span></h3>
+    <p>Portofolio Terbuka</p>
   </div>
 
-</section>
-
-<!-- =============================== -->
-<!-- PAKET PREMIUM (REVISI FULL)     -->
-<!-- =============================== -->
-
-<section id="paket" class="pricing-section">
-
-  <h2 class="section-title">Paket Premium</h2>
-
-  <div class="pricing-grid">
-
-    <!-- EXCLUSIVE -->
-    <div class="price-card">
-      <h3 class="title-exclusive">Exclusive</h3>
-      <p class="subtitle">Dapatkan Akses 1 Bulan Hanya</p>
-      <p class="old-price">Rp350.000</p>
-      <p class="new-price">Rp245.000</p>
-      <a href="#" class="price-btn">Pilih Paket</a>
-    </div>
-
-    <!-- EXCLUSIVE + -->
-    <div class="price-card">
-      <h3 class="title-exclusive-plus">Exclusive+</h3>
-      <p class="subtitle">Dapatkan Akses 12 Bulan Hanya</p>
-      <p class="old-price">Rp1.500.000</p>
-      <p class="new-price">Rp525.000</p>
-      <a href="#" class="price-btn">Pilih Paket</a>
-    </div>
-
-    <!-- SUPER EXCLUSIVE -->
-    <div class="price-card">
-      <h3 class="title-super-exclusive">Super Exclusive</h3>
-      <p class="subtitle">Dapatkan Akses Lifetime (Seumur Hidup) Hanya</p>
-      <p class="old-price">Rp3.500.000</p>
-      <p class="new-price">Rp1.680.000</p>
-      <a href="#" class="price-btn">Pilih Paket</a>
-    </div>
-
+  <!-- What You Get Section -->
+  <div id="what-you-get" class="container">
+    <h2>Yang Akan Kamu Dapatkan</h2>
+    <p><strong>Market Update</strong>: Update tentang kondisi pasar secara realtime.</p>
+    <p><strong>Insight Update</strong>: Wawasan terbaru mengenai pasar dan tren terkini.</p>
+    <p><strong>Share Top Analysis</strong>: Berbagi analisis pasar dengan para ahli.</p>
+    <p><strong>Trade Live Update</strong>: 24/7 analisis pasar langsung.</p>
   </div>
-</section>
+
+  <!-- Pricing Section -->
+  <div id="pricing" class="pricing">
+    <div class="container">
+      <h2>Pricing</h2>
+      <p>Gabung jadi member sekarang!</p>
+
+      <div class="price-option">
+        <h3 class="silver">Exclusive</h3>
+        <span>Rp350.000</span> <span class="new-price">Rp245.000</span>
+        <a href="#join-now" class="btn">AKSES SEKARANG</a>
+      </div>
+
+      <div class="price-option">
+        <h3 class="yellow-ombre">Exclusive+</h3>
+        <span>Rp1.500.000</span> <span class="new-price">Rp525.000</span>
+        <a href="#join-now" class="btn">AKSES SEKARANG</a>
+      </div>
+
+      <div class="price-option">
+        <h3 class="golden">Super Exclusive</h3>
+        <span>Rp3.500.000</span> <span class="new-price">Rp1.680.000</span>
+        <a href="#join-now" class="btn">AKSES SEKARANG</a>
+      </div>
+
+      <a href="https://lynk.id/senicrypto" target="_blank" class="btn" style="margin-top: 30px;">AYO GABUNG SEKARANG!</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Seni Crypto. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
