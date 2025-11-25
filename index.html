@@ -1,194 +1,429 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Seni Crypto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    /* Reset some basic styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seni Crypto - Strategi & Komunitas Trading</title>
+    <style>
+        /* Variabel CSS untuk kemudahan perubahan warna */
+        :root {
+            --bg-color: #000000;
+            --text-color: #FFFFFF;
+            --accent-gold: #FFD700; /* Emas */
+            --light-gold: #FFECB3;
+            --dark-gray: #1a1a1a;
+            --light-gray: #AAAAAA;
+            --silver: #C0C0C0;
+            --orange: #FF8C00;
+            --success-green: #38C172;
+        }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #2c2c2c;
-      color: #fff;
-    }
+        /* Styling Dasar */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-    .container {
-      width: 80%;
-      margin: 0 auto;
-    }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-    header {
-      background-color: #1a1a1a;
-      padding: 20px 0;
-    }
+        /* Header Hook */
+        .header-hook {
+            padding: 80px 0 50px;
+        }
 
-    header .logo h1 {
-      color: #d4af37; /* Dark gold */
-      text-transform: uppercase;
-      font-weight: 600;
-    }
+        .header-hook h1 {
+            font-size: 2.5em;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--light-gold);
+            text-shadow: 0 0 10px var(--accent-gold);
+            line-height: 1.2;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: flex-end;
-      gap: 20px;
-    }
+        .header-hook p {
+            font-size: 1.1em;
+            color: var(--light-gray);
+            margin-bottom: 40px;
+        }
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 400;
-    }
+        /* Tombol Utama Vertikal */
+        .vertical-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
-    nav ul li a:hover {
-      color: #d4af37;
-    }
+        .btn {
+            display: block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-    .hero {
-      background-color: #333;
-      padding: 100px 0;
-      text-align: center;
-    }
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+        }
 
-    .hero h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
+        .btn-gold:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-2px);
+        }
 
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 40px;
-    }
+        .btn-outline-gold {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+        }
 
-    .cta-button {
-      background-color: #d4af37;
-      color: #333;
-      padding: 15px 40px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 5px;
-      margin: 10px;
-      display: inline-block;
-    }
+        .btn-outline-gold:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+        }
 
-    .cta-button:hover {
-      background-color: #b18a2a; /* Darker gold */
-    }
+        .btn-discord {
+            background-color: #7289DA; /* Warna Discord */
+            color: var(--text-color);
+            margin-top: 20px;
+        }
 
-    .cta-button.secondary {
-      background-color: transparent;
-      border: 2px solid #d4af37;
-      color: #d4af37;
-    }
+        .btn-discord:hover {
+            background-color: #5865F2;
+        }
 
-    .cta-button.secondary:hover {
-      background-color: #d4af37;
-      color: #333;
-    }
+        /* Statistik */
+        .stats-section {
+            padding: 50px 0;
+            border-top: 1px solid var(--dark-gray);
+            border-bottom: 1px solid var(--dark-gray);
+            margin-bottom: 50px;
+        }
 
-    .features {
-      background-color: #222;
-      padding: 60px 0;
-    }
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
 
-    .features h2 {
-      text-align: center;
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
+        .stat-item {
+            text-align: center;
+            flex: 1;
+        }
 
-    .feature-list {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-    }
+        .stat-value {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: var(--accent-gold);
+        }
 
-    .feature-item {
-      background-color: #333;
-      padding: 20px;
-      border-radius: 8px;
-      flex: 1;
-    }
+        .stat-label {
+            font-size: 0.9em;
+            color: var(--light-gray);
+            text-transform: uppercase;
+        }
 
-    .feature-item h3 {
-      color: #d4af37;
-      margin-bottom: 15px;
-    }
+        .portfolio-value {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--success-green);
+            margin: 20px 0 5px;
+        }
 
-    .feature-item p {
-      color: #ccc;
-    }
+        .portfolio-label {
+            font-size: 1em;
+            color: var(--light-gray);
+        }
 
-    footer {
-      background-color: #1a1a1a;
-      padding: 20px 0;
-      text-align: center;
-    }
+        /* Keuntungan (What You Get) */
+        .benefits-section {
+            padding: 50px 0;
+            text-align: left;
+        }
 
-    footer p {
-      color: #ccc;
-    }
-  </style>
+        .benefits-section h2 {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: var(--light-gold);
+        }
+
+        .benefit-item {
+            background-color: var(--dark-gray);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item h3 {
+            color: var(--accent-gold);
+            font-size: 1.3em;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .benefit-item p {
+            color: var(--light-gray);
+            font-size: 0.95em;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 50px 0 100px;
+            text-align: center;
+        }
+
+        .pricing-section h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: var(--light-gold);
+        }
+
+        .pricing-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .price-card {
+            background-color: var(--dark-gray);
+            padding: 30px 20px;
+            border-radius: 15px;
+            border: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .price-card:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .price-card h3 {
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Warna Khusus Paket */
+        .exclusive h3 { color: var(--silver); }
+        .exclusive-plus h3 { color: var(--orange); }
+        .super-exclusive h3 { 
+            color: var(--accent-gold); 
+            text-shadow: 0 0 5px var(--accent-gold);
+        }
+
+        .old-price {
+            color: var(--light-gray);
+            text-decoration: line-through;
+            font-size: 1em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .new-price {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Tombol Akses di Pricing */
+        .btn-access {
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+            width: 80%;
+            margin-top: 10px;
+        }
+
+        .btn-access:hover {
+            background-color: var(--light-gold);
+        }
+
+        /* Tombol Gabung Akhir */
+        .final-join-section {
+            padding: 40px 0;
+            border-top: 1px solid var(--dark-gray);
+            margin-top: 50px;
+        }
+        
+        .final-join-section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        /* Media Query untuk Tampilan Responsif (Opsional, tapi bagus) */
+        @media (min-width: 600px) {
+            .pricing-grid {
+                flex-direction: row;
+                justify-content: center;
+                gap: 30px;
+            }
+            .price-card {
+                flex: 1;
+                max-width: 30%;
+            }
+            .stats-section {
+                padding: 70px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="logo">
-        <h1>Seni Crypto</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#">Beranda</a></li>
-          <li><a href="#">Tentang</a></li>
-          <li><a href="#">Fitur</a></li>
-          <li><a href="#">Kontak</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Selamat Datang di Seni Crypto</h2>
-      <p>Tempat yang tepat untuk memahami dan bergabung dengan dunia cryptocurrency.</p>
-      <a href="https://lynk.id/senicrypto" class="cta-button">Gabung Sekarang</a>
-      <a href="#features" class="cta-button secondary">Apa yang Kamu Dapatkan?</a>
-    </div>
-  </section>
+<div class="container">
+    
+    <header id="home" class="header-hook">
+        <h1>Strategi Cerdas dan Terukur untuk **Gandain Uang Kamu**</h1>
+        <p>Gabung ke Komunitas dan Platform Belajar Crypto Sekarang.</p>
 
-  <section id="features" class="features">
-    <div class="container">
-      <h2>Fitur Kami</h2>
-      <div class="feature-list">
-        <div class="feature-item">
-          <h3>Fitur 1</h3>
-          <p>Deskripsi tentang fitur 1</p>
+        <div class="vertical-buttons">
+            <a href="#pricing" class="btn btn-gold scroll-link" id="btn-gabung-sekarang">GABUNG SEKARANG</a>
+            <a href="#benefits" class="btn btn-outline-gold scroll-link">APA YANG KAMU DAPATKAN</a>
         </div>
-        <div class="feature-item">
-          <h3>Fitur 2</h3>
-          <p>Deskripsi tentang fitur 2</p>
-        </div>
-        <div class="feature-item">
-          <h3>Fitur 3</h3>
-          <p>Deskripsi tentang fitur 3</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        
+        <a href="https://discord.gg/uZxwH6k6x" target="_blank" class="btn btn-discord">GABUNG KOMUNITAS DISCORD SEKARANG</a>
+    </header>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Seni Crypto. Semua hak dilindungi.</p>
-    </div>
-  </footer>
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-value">150+</span>
+                <span class="stat-label">Member</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value">85%</span>
+                <span class="stat-label">Puas</span>
+            </div>
+        </div>
+        <div class="stat-item">
+            <p class="portfolio-label">Portofolio Terbuka</p>
+            <span class="portfolio-value">+57%</span>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits-section">
+        <h2>Yang Akan Kamu Dapatkan</h2>
+        
+        <div class="benefit-item">
+            <h3>Market Update</h3>
+            <p>Update Tentang Kondisi Pasar Secara Realtime. Ini membantu kalian untuk persiapan mengambil langkah apa saja yang harus dilakukan.</p>
+        </div>
+
+        <div class="benefit-item">
+            <h3>Insight Update</h3>
+            <p>Selalu Mendapatkan Wawasan Terbaru Mengenai Pasar, Tren, dan Analisis fundamental terkini.</p>
+        </div>
+
+        <div class="benefit-item">
+            <h3>Share Top Analysis</h3>
+            <p>Berbagi Wawasan dan Analisis Mengenai Pasar bersama Analisis Teratas dan Analisis Terpilih dari komunitas.</p>
+        </div>
+        
+        <div class="benefit-item">
+            <h3>Trade Live Update</h3>
+            <p>Akses ke Analisis Pasar dan Sinyal Trading 24/7 dari tim berpengalaman.</p>
+        </div>
+    </section>
+    
+    <section id="pricing" class="pricing-section">
+        <h2>Gabung Jadi Member Sekarang</h2>
+
+        <div class="pricing-grid">
+            
+            <div class="price-card exclusive">
+                <h3>Exclusive</h3>
+                <p>Dapatkan Akses 1 Bulan Hanya</p>
+                <span class="old-price">Rp350.000</span>
+                <span class="new-price">Rp245.000</span>
+                <a href="#final-join" class="btn btn-access scroll-link">AKSES SEKARANG</a>
+            </div>
+
+            <div class="price-card exclusive-plus">
+                <h3>Exclusive+</h3>
+                <p>Dapatkan Akses 12 Bulan Hanya</p>
+                <span class="old-price">Rp1.500.000</span>
+                <span class="new-price">Rp525.000</span>
+                <a href="#final-join" class="btn btn-access scroll-link">AKSES SEKARANG</a>
+            </div>
+
+            <div class="price-card super-exclusive">
+                <h3>Super Exclusive</h3>
+                <p>Dapatkan Akses Lifetime (Seumur Hidup) Hanya</p>
+                <span class="old-price">Rp3.500.000</span>
+                <span class="new-price">Rp1.680.000</span>
+                <a href="#final-join" class="btn btn-access scroll-link">AKSES SEKARANG</a>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section id="final-join" class="final-join-section">
+        <p>Klik Tombol Di Bawah ini untuk Bergabung :</p>
+        <a href="https://lynk.id/senicrypto" target="_blank" class="btn btn-gold" style="padding: 20px 30px; font-size: 1.2em;">AYO GABUNG SEKARANG!</a>
+    </section>
+
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollLinks = document.querySelectorAll('.scroll-link');
+
+        scrollLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Mencegah aksi default link
+                e.preventDefault(); 
+                
+                // Ambil target ID dari atribut href (e.g., #pricing)
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Gulir ke elemen target dengan efek halus
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Logika khusus untuk tombol "GABUNG SEKARANG" di header
+        const btnGabung = document.getElementById('btn-gabung-sekarang');
+        if (btnGabung) {
+             btnGabung.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Menggulir ke section "Pricing"
+                document.getElementById('pricing').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+</script>
+
 </body>
 </html>
