@@ -3,199 +3,192 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Seni Crypto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* CSS untuk mengatur font dan layout umum */
-    body {
+    /* Reset some basic styles */
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #1a1a1a;
-      color: white;
-      overflow-x: hidden;
+      box-sizing: border-box;
     }
 
-    h1, h2, p {
-      margin: 0;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #2c2c2c;
+      color: #fff;
     }
 
     .container {
-      width: 100%;
-      padding: 5% 10%;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 20px 0;
+    }
+
+    header .logo h1 {
+      color: #d4af37; /* Dark gold */
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    nav ul li a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      background-color: #333;
+      padding: 100px 0;
       text-align: center;
     }
 
-    /* Warna emas dan efek */
-    .highlight {
-      color: #FFD700;
-      font-weight: bold;
-    }
-
-    .silver { color: silver; }
-    .yellow-ombre { color: #FFA500; }
-    .golden { color: #FFD700; }
-
-    /* Hero Section */
-    .hero {
-      padding: 80px 0;
-      background: linear-gradient(45deg, #ffd700, #ffcc00);
-      border-bottom: 2px solid #fff;
-      color: white;
-    }
-
-    .hero h1 {
+    .hero h2 {
       font-size: 36px;
       margin-bottom: 20px;
     }
 
     .hero p {
       font-size: 18px;
-      color: #d3d3d3;
+      margin-bottom: 40px;
     }
 
-    .btn-vertical {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 20px;
-      align-items: center;
-    }
-
-    .btn {
-      background-color: #FFD700;
-      padding: 15px 30px;
-      font-size: 16px;
-      color: white;
-      text-transform: uppercase;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #ffcc00;
-    }
-
-    .btn-vertical a {
-      display: block;
-      margin: 5px;
-      background-color: #FFD700;
-      padding: 15px;
-      color: white;
+    .cta-button {
+      background-color: #d4af37;
+      color: #333;
+      padding: 15px 40px;
+      font-size: 18px;
       text-decoration: none;
-      text-transform: uppercase;
-      font-weight: bold;
       border-radius: 5px;
-      transition: background 0.3s ease;
+      margin: 10px;
+      display: inline-block;
     }
 
-    .btn-vertical a:hover {
-      background-color: #ffcc00;
+    .cta-button:hover {
+      background-color: #b18a2a; /* Darker gold */
     }
 
-    .stats {
-      margin-top: 50px;
+    .cta-button.secondary {
+      background-color: transparent;
+      border: 2px solid #d4af37;
+      color: #d4af37;
     }
 
-    .pricing {
-      margin-top: 50px;
-      padding: 50px 0;
-      background-color: #333;
+    .cta-button.secondary:hover {
+      background-color: #d4af37;
+      color: #333;
     }
 
-    .pricing h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .price-option {
-      margin: 20px 0;
-    }
-
-    .price-option span {
-      text-decoration: line-through;
-      color: #d3d3d3;
-    }
-
-    .price-option .new-price {
-      color: #FFD700;
-      font-size: 24px;
-    }
-
-    /* Footer section */
-    footer {
+    .features {
       background-color: #222;
-      color: white;
+      padding: 60px 0;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .feature-list {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .feature-item {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      flex: 1;
+    }
+
+    .feature-item h3 {
+      color: #d4af37;
+      margin-bottom: 15px;
+    }
+
+    .feature-item p {
+      color: #ccc;
+    }
+
+    footer {
+      background-color: #1a1a1a;
       padding: 20px 0;
       text-align: center;
+    }
+
+    footer p {
+      color: #ccc;
     }
   </style>
 </head>
 <body>
-
-  <!-- Hero Section -->
-  <div class="hero">
+  <header>
     <div class="container">
-      <h1>Strategi Cerdas dan Terukur untuk Gandain Uang Kamu</h1>
-      <p>Gabung ke Komunitas dan Platform Belajar Crypto Sekarang</p>
-
-      <div class="btn-vertical">
-        <a href="#join-now" class="btn">GABUNG SEKARANG</a>
-        <a href="#what-you-get" class="btn">APA YANG KAMU DAPATKAN</a>
+      <div class="logo">
+        <h1>Seni Crypto</h1>
       </div>
-
-      <a href="https://discord.gg/uZxwH6k6x" target="_blank" class="btn" style="margin-top: 30px;">GABUNG KOMUNITAS DISCORD SEKARANG</a>
+      <nav>
+        <ul>
+          <li><a href="#">Beranda</a></li>
+          <li><a href="#">Tentang</a></li>
+          <li><a href="#">Fitur</a></li>
+          <li><a href="#">Kontak</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Stats Section -->
-  <div class="stats container">
-    <h2>150+ <span class="highlight">Member</span>  85% <span class="highlight">Puas</span></h2>
-    <h3>Portofolio <span class="highlight">+57%</span></h3>
-    <p>Portofolio Terbuka</p>
-  </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Selamat Datang di Seni Crypto</h2>
+      <p>Tempat yang tepat untuk memahami dan bergabung dengan dunia cryptocurrency.</p>
+      <a href="https://lynk.id/senicrypto" class="cta-button">Gabung Sekarang</a>
+      <a href="#features" class="cta-button secondary">Apa yang Kamu Dapatkan?</a>
+    </div>
+  </section>
 
-  <!-- What You Get Section -->
-  <div id="what-you-get" class="container">
-    <h2>Yang Akan Kamu Dapatkan</h2>
-    <p><strong>Market Update</strong>: Update tentang kondisi pasar secara realtime.</p>
-    <p><strong>Insight Update</strong>: Wawasan terbaru mengenai pasar dan tren terkini.</p>
-    <p><strong>Share Top Analysis</strong>: Berbagi analisis pasar dengan para ahli.</p>
-    <p><strong>Trade Live Update</strong>: 24/7 analisis pasar langsung.</p>
-  </div>
-
-  <!-- Pricing Section -->
-  <div id="pricing" class="pricing">
+  <section id="features" class="features">
     <div class="container">
-      <h2>Pricing</h2>
-      <p>Gabung jadi member sekarang!</p>
-
-      <div class="price-option">
-        <h3 class="silver">Exclusive</h3>
-        <span>Rp350.000</span> <span class="new-price">Rp245.000</span>
-        <a href="#join-now" class="btn">AKSES SEKARANG</a>
+      <h2>Fitur Kami</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>Fitur 1</h3>
+          <p>Deskripsi tentang fitur 1</p>
+        </div>
+        <div class="feature-item">
+          <h3>Fitur 2</h3>
+          <p>Deskripsi tentang fitur 2</p>
+        </div>
+        <div class="feature-item">
+          <h3>Fitur 3</h3>
+          <p>Deskripsi tentang fitur 3</p>
+        </div>
       </div>
-
-      <div class="price-option">
-        <h3 class="yellow-ombre">Exclusive+</h3>
-        <span>Rp1.500.000</span> <span class="new-price">Rp525.000</span>
-        <a href="#join-now" class="btn">AKSES SEKARANG</a>
-      </div>
-
-      <div class="price-option">
-        <h3 class="golden">Super Exclusive</h3>
-        <span>Rp3.500.000</span> <span class="new-price">Rp1.680.000</span>
-        <a href="#join-now" class="btn">AKSES SEKARANG</a>
-      </div>
-
-      <a href="https://lynk.id/senicrypto" target="_blank" class="btn" style="margin-top: 30px;">AYO GABUNG SEKARANG!</a>
     </div>
-  </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Seni Crypto. All rights reserved.</p>
+    <div class="container">
+      <p>&copy; 2025 Seni Crypto. Semua hak dilindungi.</p>
+    </div>
   </footer>
-
 </body>
 </html>
