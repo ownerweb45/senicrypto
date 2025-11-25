@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TradeWithXander — Demo Landing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#0b72ff;
+      --dark:#0b1220;
+      --muted:#6b7280;
+      --card:#0f1724;
+      --glass: rgba(255,255,255,0.03);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071028 0%, #081226 60%);color:#e6eef8;}
+    .container{max-width:1100px;margin:0 auto;padding:28px;}
+    /* NAV */
+    header{padding:18px 0;}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#6bc5ff);display:flex;align-items:center;justify-content:center;font-weight:800;color:#05263b}
+    nav a{color:rgba(230,238,248,0.9);text-decoration:none;margin:0 10px;font-weight:500}
+    .cta{background:var(--accent);color:#042034;padding:10px 16px;border-radius:10px;font-weight:700;text-decoration:none}
+
+    /* HERO */
+    .hero{display:flex;gap:32px;align-items:center;padding:48px 0}
+    .left{flex:1}
+    h1{font-size:36px;margin:0 0 12px;line-height:1.02}
+    p.lead{color:var(--muted);margin:0 0 22px}
+    .hero-ctas{display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;display:inline-block}
+    .btn-outline{border:1px solid rgba(255,255,255,0.08);background:transparent;color:inherit}
+    .stats{display:flex;gap:18px;margin-top:24px}
+    .stat{background:var(--glass);padding:12px;border-radius:10px;text-align:center;min-width:110px}
+    .stat strong{display:block;font-size:18px}
+
+    .right{flex:1}
+    .hero-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+    .chart{height:220px;border-radius:10px;background:linear-gradient(90deg,rgba(11,114,255,0.12),rgba(107,197,255,0.06));display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700}
+
+    /* FEATURES */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:36px 0}
+    .feature{background:var(--card);padding:18px;border-radius:12px}
+    .feature h4{margin:0 0 8px}
+    .feature p{color:var(--muted);margin:0}
+
+    /* TESTIMONIALS */
+    .testimonials{margin:36px 0}
+    .testimonial-list{display:flex;gap:12px;overflow:auto;padding-bottom:6px}
+    .testimonial{min-width:260px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:12px}
+    .testimonial p{color:var(--muted);margin:8px 0 0}
+
+    footer{border-top:1px solid rgba(255,255,255,0.03);padding:28px 0;margin-top:24px;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:820px){
+      h1{font-size:28px}
+      .hero{flex-direction:column}
+      .right{order:-1;width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">X</div>
+        <div>
+          <div style="font-weight:800">TradeWithX</div>
+          <div style="font-size:12px;color:var(--muted)">Signals • Education • Community</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Fitur</a>
+        <a href="#pricing">Harga</a>
+        <a href="#testimonials">Testimoni</a>
+        <a class="cta" href="#">Gabung Sekarang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="left">
+        <h1>Belajar & Trading bersama sinyal premium — gampang, terarah.</h1>
+        <p class="lead">Sinyal harian, webinar mingguan, dan komunitas mentor untuk mempercepat pembelajaran trading Anda — cocok untuk pemula sampai pro.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#">Coba Gratis 7 Hari</a>
+          <a class="btn btn-outline" href="#">Lihat Paket</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>+12k</strong><span style="color:var(--muted);font-size:13px">Anggota</span></div>
+          <div class="stat"><strong>95%</strong><span style="color:var(--muted);font-size:13px">Tingkat Akurasi</span></div>
+          <div class="stat"><strong>300+</strong><span style="color:var(--muted);font-size:13px">Sinyal Bulanan</span></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="hero-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <div>
+              <div style="font-size:13px;color:var(--muted)">Akun</div>
+              <div style="font-weight:700;font-size:16px">Xander Pro • Live</div>
+            </div>
+            <div style="text-align:right;color:var(--muted);font-size:13px">Saldo: $12,450</div>
+          </div>
+          <div class="chart">[Grafik Contoh — gantikan dengan chart nyata]</div>
+          <div style="display:flex;justify-content:space-between;margin-top:12px;color:var(--muted);font-size:14px">
+            <div>Open: 3</div>
+            <div>Win Rate: 92%</div>
+            <div>Monthly P/L: +7.3%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 style="margin-bottom:12px">Kenapa pilih kami</h2>
+      <div class="features">
+        <div class="feature">
+          <h4>Sinyal Real-time</h4>
+          <p>Notifikasi entry/exit jelas, dengan target & stoploss yang terukur.</p>
+        </div>
+        <div class="feature">
+          <h4>Panduan Lengkap</h4>
+          <p>Video tutorial dan sesi live untuk membangun skill trading yang benar.</p>
+        </div>
+        <div class="feature">
+          <h4>Komunitas Aktif</h4>
+          <p>Diskusi, review sinyal, dan mentoring bersama trader berpengalaman.</p>
+        </div>
+        <div class="feature">
+          <h4>Manajemen Risiko</h4>
+          <p>Template untuk position sizing dan pemantauan risiko portofolio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <h2>Testimoni</h2>
+      <div class="testimonial-list">
+        <div class="testimonial">
+          <div style="font-weight:700">Rina, 28</div>
+          <p>Belajar di sini bikin saya paham risk management. Sinyalnya jelas dan komunitasnya suportif.</p>
+        </div>
+        <div class="testimonial">
+          <div style="font-weight:700">Anton, 34</div>
+          <p>Profit konsisten sejak pakai sinyal mereka. Tutorialnya juga gampang diikuti.</p>
+        </div>
+        <div class="testimonial">
+          <div style="font-weight:700">Mega, 22</div>
+          <p>Webinarnya membantu banget buat pemula. Mentor responsif dan sabar.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" style="margin:36px 0">
+      <h2>Harga</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:14px">
+        <div class="feature">
+          <h4>Pemula</h4>
+          <div style="font-size:20px;font-weight:800;margin:8px 0">Rp99.000 / bln</div>
+          <p>Akses sinyal + rekaman webinar</p>
+        </div>
+        <div class="feature">
+          <h4>Pro</h4>
+          <div style="font-size:20px;font-weight:800;margin:8px 0">Rp249.000 / bln</div>
+          <p>Sinyal live, grup VIP, dan mentoring</p>
+        </div>
+        <div class="feature">
+          <h4>Mentor</h4>
+          <div style="font-size:20px;font-weight:800;margin:8px 0">Rp799.000 / bln</div>
+          <p>Semua fitur + sesi 1-on-1 setiap bulan</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:800">TradeWithX</div>
+          <div style="font-size:13px;color:var(--muted)">© <span id="year"></span> TradeWithX — Semua hak dilindungi.</div>
+        </div>
+        <div style="color:var(--muted);font-size:13px">Privacy • Terms • Kontak</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
